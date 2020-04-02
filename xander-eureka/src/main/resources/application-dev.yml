@@ -1,0 +1,13 @@
+server:
+  port: 8081
+
+eureka:
+  instance:
+    # eureka服务端的实例名称
+    hostname: 127.0.0.1
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      #可配置集群、单机底下为单机配置eureka server交互的地址查询服务和注册服务
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/
